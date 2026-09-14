@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+  The Making Room Lite — free one-page craft-workshop template.
+  Free for personal and commercial use. Attribution appreciated.
+  Full version (schedule with live seats and sold-out states, gallery with
+  lightbox, booking form, studio and visit pages, four colour packs, JSON
+  config, Astro): see README.md.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Making Room Lite : free craft workshop template</title>
+<meta name="description" content="The Making Room Lite is a free one-page HTML template for craft workshop studios. Warm, hands-on, artisanal. Full Astro version available.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fira+Sans:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">The Making Room<em>.</em></a>
+    <a class="tel" href="mailto:hello@themakingroom.co.uk">hello@themakingroom.co.uk</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-img"><img src="img/hero.jpg" alt="Hands shaping a pot on the wheel in the studio" fetchpriority="high"></div>
+  <div class="wrap">
+    <h1>Make Something With Your Own Two&nbsp;Hands.</h1>
+    <p class="h-sub">Pottery, woodwork and textiles workshops in Alderton. Eight benches, all the tools, tea in the break. Beginners genuinely&nbsp;welcome.</p>
+    <div class="h-cta">
+      <a class="btn hbtn" href="#visit">Ask About a Place</a>
+      <a class="btn hghost" href="#crafts">See the Crafts</a>
+    </div>
+  </div>
+</section>
+
+<!-- the three crafts -->
+<section class="crafts" id="crafts">
+  <div class="wrap">
+    <h2>Three Crafts, One&nbsp;Room.</h2>
+    <div class="cr-grid">
+      <div class="cr tall k-clay">
+        <div class="ph"><img src="img/craft-clay.jpg" alt="A student's hands pulling up the wall of a clay pot"></div>
+        <div class="cr-tx">
+          <h3>Clay</h3>
+          <p>Wheel throwing and hand building with Erin. Your pots are glazed, fired and ready to collect about three weeks later.</p>
+        </div>
+      </div>
+      <div class="cr-col">
+        <div class="cr k-wood">
+          <div class="ph"><img src="img/craft-wood.jpg" alt="Carving a spoon from green wood with a knife" loading="lazy"></div>
+          <div class="cr-tx">
+            <h3>Wood</h3>
+            <p>Spoon carving and small joinery with Joss. Sharp tools, proper technique, something useful in your bag by home time.</p>
+          </div>
+        </div>
+        <div class="cr k-tex">
+          <div class="ph"><img src="img/craft-tex.jpg" alt="Indigo-dyed cloth being unfolded to show the pattern" loading="lazy"></div>
+          <div class="cr-tx">
+            <h3>Textiles</h3>
+            <p>Indigo dyeing and visible mending with Mim. Old jumpers leave better than they arrived.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- one review -->
+<section class="word">
+  <div class="wrap">
+    <div class="wd-grid">
+      <div class="ph"><img src="img/review-piece.jpg" alt="A finished set of handmade mugs on the studio shelf" loading="lazy"></div>
+      <div class="reveal">
+        <blockquote>&ldquo;I booked the wheel taster for my birthday and came home with <b>three pots and a new hobby.</b> Erin is endlessly patient.&rdquo;</blockquote>
+        <p class="wd-sig">Hannah R., first go on the wheel, March 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- contact / visit -->
+<section class="closer" id="visit">
+  <div class="wrap">
+    <h2>Come and Have a&nbsp;Go.</h2>
+    <div class="cl-grid">
+      <p class="cl-note">New term dates land every couple of months, with a live seat count on every class. <b>Email us and we will save you a seat,</b> or tell us the craft and we will let you know when it is next running.</p>
+      <div class="cl-particulars">
+        <p><b>Unit 4, The Old Tannery</b><br>Alderton AL3 6QF</p>
+        <p><a href="mailto:hello@themakingroom.co.uk">hello@themakingroom.co.uk</a><br><a href="tel:+441632960812">01632 960 812</a></p>
+      </div>
+    </div>
+    <a class="btn" href="mailto:hello@themakingroom.co.uk?subject=A place on a workshop">Ask About a Place</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="fbrand">The Making Room<em>.</em></span>
+    <span>Unit 4, The Old Tannery, Alderton AL3 6QF</span>
+    <a href="tel:+441632960812">01632 960 812</a>
+    <span>&copy; The Making Room 2026</span>
+  </div>
+  <div class="wrap">
+    <p class="foot-disc">A fictional studio. Free demo template by Mike Smith Design. Photography is placeholder, replace for production.</p>
+  </div>
+</footer>
+
+<script src="lenis.min.js"></script>
+<script>
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!REDUCED && window.Lenis) {
+  const lenis = new Lenis({ lerp: .09 });
+  (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })();
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  const target = document.querySelector(a.getAttribute('href'));
+  if (!target) return;
+  e.preventDefault();
+  target.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' });
+}));
+
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: .16 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+if (REDUCED) document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+</script>
+</body>
+</html>
