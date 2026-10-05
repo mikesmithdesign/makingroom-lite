@@ -36,4 +36,4 @@ a booking request form, a studio page with teacher bios, a visit page with
 directions and vouchers, four colour packs, and JSON-driven content
 (rebrand the whole site from one data folder), built as an Astro 7 project.
 
-→ https://mikesmithdesign.gumroad.com/l/makingroom-astro-theme (£25)
+→ [Making Room, the full Astro theme for craft workshops](https://mikesmithdesign.co.uk/themes/makingroom) (£25)
